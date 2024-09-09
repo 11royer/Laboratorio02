@@ -1,0 +1,14 @@
+Caracteristicas de TypeScript: tenemos los siguientes
+tipado estatico
+interfaces y tipos
+clases y modificaciones de acceso
+genrics
+
+diferencias con JavaScript:
+
+TypeScript: Permite definir interfaces y tipos personalizados
+para estructurar y validar datos de manera robusta, 
+mientras que JavaScript no tiene un sistema formal, lo que significa
+que nose pueden definir estructuras de datos con la misma precision que en
+TypeScript. Donde las estructuras de datos se definen y validan mediante codigo 
+y documentacion

@@ -1,0 +1,76 @@
+Características de los Template Strings: los template strings ofrecen una forma
+más flexible y conveniente de manejar cadenas de texto,
+especialmente cuando se requiere interpolación y manejo de múltiples líneas.
+
+Interpolación de Variables: Los template strings permiten la interpolación
+de variables y expresiones dentro de la cadena.
+Esto se realiza usando la sintaxis ${expresión}. Por ejemplo:
+
+javascript
+Copiar código
+const nombre = 'Royer';
+const saludo = Hola, ${nombre}!;
+console.log(saludo); // Output: Hola, Royer!
+
+Multilínea: Los template strings pueden abarcar varias líneas sin necesidad
+de usar caracteres de escape. Esto facilita la creación de cadenas largas y
+formateadas:
+
+javascript
+Copiar código
+const mensaje = `Este es un mensaje
+que ocupa varias líneas
+en el código.`;
+console.log(mensaje);
+
+Expresiones Embebidas: Dentro de los template strings, puedes incluir expresiones JavaScript,
+no solo variables. Las expresiones se evaluarán y
+el resultado será insertado en la cadena:
+
+javascript
+Copiar código
+const a = 5;
+const b = 10;
+const resultado = La suma de ${a} y ${b} es ${a + b}.;
+console.log(resultado); // Output: La suma de 5 y 10 es 15.
+
+Funciones de Etiqueta: Los template strings pueden ser etiquetados con funciones
+para procesar la cadena y los valores interpolados antes de producir el resultado
+final. Este es un uso avanzado y menos común, pero útil para casos específicos:
+
+javascript
+Copiar código
+function etiqueta(strings, ...valores) {
+  console.log(strings);
+  console.log(valores);
+}
+
+etiqueta`Hola, ${nombre}. ¿Cómo estás?`;
+// Output:
+// ["Hola, ", ". ¿Cómo estás?"]
+// ["Royer"]
+Diferencias con las Comillas Simples y Dobles
+
+Interpolación: Las comillas simples y dobles no permiten la interpolación de variables. Para incluir variables en cadenas, necesitas usar concatenación:
+
+javascript
+Copiar código
+const nombre = 'Royer';
+const saludo = 'Hola, ' + nombre + '!';
+
+Multilínea: Las comillas simples y dobles requieren caracteres de escape para
+las nuevas líneas, lo que hace que la lectura y escritura de cadenas multilínea
+sea menos intuitiva:
+
+javascript
+Copiar código
+const mensaje = 'Este es un mensaje\nque ocupa varias líneas\nen el código.';
+
+Expresiones Embebidas: No puedes insertar expresiones directamente en comillas simples
+o dobles; debes concatenar manualmente:
+
+javascript
+Copiar código
+const a = 5;
+const b = 10;
+const resultado = 'La suma de ' + a + ' y ' + b + ' es ' + (a + b) + '.';
